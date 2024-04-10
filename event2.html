@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event with async</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+    <script>
+        // this will be executed after 2000ms, i,e 2s. this the basic difference between setTimeout and setInterval, in the former, the code within it will be executed only once after the defined time whereas in the later, the code will be executed after every defined interval;
+
+        // setTimeout( function(){
+        //     console.log("Dipawnita");
+        // }, 5000)
+
+        const Dip = function(){
+            console.log("Dipanwita");
+        }
+        setTimeout(Dip,5000) // here the reference of the function is passed not the function call
+
+        const changeText = function(){
+            document.querySelector('h1').innerHTML = "best JS series"
+        }
+        const chnageMe = setTimeout( changeText,5000)
+
+        // clearTimeout cancels the setTimeout event, i.e, once clearTimeout is executed, setTimeout event will not be executed
+
+        // HEre, once the stop button will be clicked, the name will  not be changed
+        document.querySelector("#stop").addEventListener("click",function(){
+            clearTimeout(chnageMe);
+            console.log("STOPPED");
+        })
+
+        
+    </script>
+</body>
+</html>

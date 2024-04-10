@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event with async</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="strt">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setInterval(function() {
+    //     // console.log("Dipanwita",Date.now().toLocaleString());
+    // },1000)
+
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+     const interValid= setInterval(sayDate,1000,"hi")
+     clearInterval(interValid); //will clear the interval
+
+
+    //  on clicking start button, counting is started and on click of stop button, counting is stopped
+    document.querySelector("#strt").addEventListener("click", () =>{
+       const set =  setInterval(sayDate,1000,"hi")
+   
+    // const interValid= setInterval(sayDate,1000,"hi")
+
+    document.querySelector("#stop").addEventListener("click", () =>{
+        clearInterval(set);
+          })    
+    })
+</script>
+</html>

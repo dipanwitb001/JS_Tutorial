@@ -1,0 +1,19 @@
+html{
+    margin: 0;
+}
+body
+{
+    margin: 100px auto 100px;
+    width: 80%;
+    text-align: center; 
+    background-color: #212121;
+}
+.container
+{
+    background-color: beige;
+    border: 2px;
+    border-radius: 5rem;
+}
+span{
+    color: rgb(116, 81, 35);
+}

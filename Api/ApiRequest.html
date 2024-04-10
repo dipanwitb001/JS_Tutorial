@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request</title>
+</head>
+<body style="background-color: #212121;">
+    
+</body>
+<script>
+
+    const requestUrl = 'https://api.github.com/users/dipanwitb001'
+    // creating a new object of the method
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    // console.log("HERE");
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4)
+        {
+            console.log(typeof (xhr.responseText));
+            const data = JSON.parse(xhr.responseText);
+            //here with the help of JSON parse, the response text is converted to object which was origianlly recieved as a string
+            console.log(typeof data);
+            console.log(data.followers); 
+        }
+    }
+    
+    xhr.send();
+</script>
+</html>
